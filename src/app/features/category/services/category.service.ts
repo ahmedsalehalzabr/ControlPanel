@@ -17,22 +17,25 @@ export class CategoryService {
  
 
   getAllCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${environment.baseUrl}/api/Categories`);
+    return this.http.get<Category[]>(`${environment.baseUrl}/api/Category`);
   }
 
 getCategoryById(id:string) : Observable<Category> {
-  return this.http.get<Category>(`${environment.baseUrl}/api/Categories/${id}`);
+  return this.http.get<Category>(`${environment.baseUrl}/api/Category/${id}`);
+}
+getBlogPostByUrlHandle(urlHandle:string) : Observable<Category> {
+  return this.http.get<Category>(`${environment.baseUrl}/api/Category/${urlHandle}`);
 }
 
 addCategory(model:addCategoryRequest): Observable<void> {
-  return this.http.post<void>( `${environment.baseUrl}/api/Categories?addAuth=true`,model);
+  return this.http.post<void>( `${environment.baseUrl}/api/Category?addAuth=true`,model);
 }
 updateCategory(id:string,updateCategoryRequest:UpdateCategoryRequest) : Observable<Category> {
-  return this.http.put<Category>(`${environment.baseUrl}/api/Categories/${id}?addAuth=true`,updateCategoryRequest);
+  return this.http.put<Category>(`${environment.baseUrl}/api/Category/${id}?addAuth=true`,updateCategoryRequest);
 }
  
 deleteCategory(id:string) : Observable<Category> {
-  return this.http.delete<Category>(`${environment.baseUrl}/api/Categories/${id}?addAuth=true`);
+  return this.http.delete<Category>(`${environment.baseUrl}/api/Category/${id}?addAuth=true`);
 }
 
 }

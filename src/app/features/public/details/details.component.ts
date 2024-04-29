@@ -3,6 +3,8 @@ import { BlogPostService } from '../../blog-post/services/blog-post.service';
 import { Observable } from 'rxjs';
 import { BlogPost } from '../../blog-post/models/blog-post.model';
 import { ActivatedRoute } from '@angular/router';
+import { Category } from '../../category/models/category.model';
+import { CategoryService } from '../../category/services/category.service';
 
 @Component({
   selector: 'app-details',
@@ -12,10 +14,10 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent implements OnInit {
 
   url: string | null = null;
-  blogPost$? : Observable<BlogPost>;
+  blogPost$? : Observable<Category>;
 
   constructor(private route: ActivatedRoute,
-    private blogPostService: BlogPostService) {
+    private blogPostService: CategoryService) {
 
   }
   ngOnInit(): void {

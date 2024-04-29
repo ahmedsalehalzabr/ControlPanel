@@ -8,7 +8,7 @@
      <table class="table table-bordered mt-3">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Items</th>
                 <th>Name</th>
                 <th>Url Handle</th>
                 <th></th>
@@ -16,7 +16,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let category of categories">
-               <td>{{category.id}}</td>
+                <td>
+                <span *ngFor="let item of category.items">
+                    <span class="badge bg-secondary me-2">{{item.title}}</span>
+                  </span>
+                </td>
                <td>{{category.name}}</td>
                <td>{{category.urlHandle}}</td>
                <td>

@@ -14,27 +14,25 @@ export class BlogPostService {
   constructor(private http:HttpClient) { }
 
   createBlogPost(data:AddBlogPost): Observable<BlogPost> {
-    return this.http.post<BlogPost>( `${environment.baseUrl}/api/BlogPost?addAuth=true`,data);
+    return this.http.post<BlogPost>( `${environment.baseUrl}/api/Item?addAuth=true`,data);
   }
 
   getAllBlogPost(): Observable<BlogPost[]> {
-    return this.http.get<BlogPost[]>( `${environment.baseUrl}/api/BlogPost`);
+    return this.http.get<BlogPost[]>( `${environment.baseUrl}/api/Item`);
   }
 
   getBlogPostById(id:string) : Observable<BlogPost> {
-    return this.http.get<BlogPost>(`${environment.baseUrl}/api/BlogPost/${id}`);
+    return this.http.get<BlogPost>(`${environment.baseUrl}/api/Item/${id}`);
   }
   
-  getBlogPostByUrlHandle(urlHandle:string) : Observable<BlogPost> {
-    return this.http.get<BlogPost>(`${environment.baseUrl}/api/BlogPost/${urlHandle}`);
-  }
+
 
   updateBlogPost(id: string, updatedBlogPost: UpdateBlogPostModel): Observable<BlogPost> {
-    return this.http.put<BlogPost>(`${environment.baseUrl}/api/BlogPost/${id}?addAuth=true`, updatedBlogPost);
+    return this.http.put<BlogPost>(`${environment.baseUrl}/api/Item/${id}?addAuth=true`, updatedBlogPost);
   }
 
   deleteBlogPost(id:string) : Observable<BlogPost> {
-    return this.http.delete<BlogPost>(`${environment.baseUrl}/api/BlogPost/${id}?addAuth=true`);
+    return this.http.delete<BlogPost>(`${environment.baseUrl}/api/Item/${id}?addAuth=true`);
   }
 
 }

@@ -20,7 +20,7 @@ export class ImageService {
   constructor(private http: HttpClient) { }
 
   getAllImages(): Observable<BlogImage[]> {
-    return this.http.get<BlogImage[]>(`${environment.baseUrl}/api/images`);
+    return this.http.get<BlogImage[]>(`${environment.baseUrl}/api/ImagesCategory`);
   }
 
 
@@ -30,7 +30,7 @@ export class ImageService {
     formData.append('fileName', fileName);
     formData.append('title', title);
 
-    return this.http.post<BlogImage>(`${environment.baseUrl}/api/images`, formData);
+    return this.http.post<BlogImage>(`${environment.baseUrl}/api/ImagesCategory`, formData);
   }
 
   selectImage(image: BlogImage): void {

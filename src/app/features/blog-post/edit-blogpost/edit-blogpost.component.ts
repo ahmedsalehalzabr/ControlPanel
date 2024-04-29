@@ -17,8 +17,6 @@ import { ImageService } from '../../../shared/components/image-selector/image.se
 export class EditBlogpostComponent implements OnInit, OnDestroy {
 id:string | null = null;
 model?:BlogPost;
-categories$?: Observable<Category[]>;
-selectedCategory?: string[];
 isImageSelectorVisible : boolean = false;
 
 routeSubscription?: Subscription;
@@ -29,7 +27,7 @@ imageSelectSubscricption?: Subscription;
 
 constructor(private route: ActivatedRoute,
   private blogPostService:BlogPostService,
-  private categoryService:CategoryService,
+ 
   private router:Router,
   private imageService: ImageService){
 
@@ -37,7 +35,7 @@ constructor(private route: ActivatedRoute,
  
 ngOnInit(): void {
 
-this.categories$ = this.categoryService.getAllCategories();
+//this.categories$ = this.categoryService.getAllCategories();
 
   this.routeSubscription = this.route.paramMap.subscribe({
     next: (params) => {
@@ -49,7 +47,7 @@ this.categories$ = this.categoryService.getAllCategories();
         ({
           next: (response) => {
             this.model = response;
-            this.selectedCategory = response.categories.map(x => x.id);
+           // this.selectedCategory = response.categories.map(x => x.id);
           }
         });
       }
@@ -70,15 +68,15 @@ onFormSubmit(): void {
  // Convert this model to Request Object
  if (this.model && this.id) {
   var updateBlogPost: UpdateBlogPostModel = {
-    author: this.model.author,
-    content: this.model.content,
+    //author: this.model.author,
+    //content: this.model.content,
     shortDescription: this.model.shortDescription,
     featuredImageUrl: this.model.featuredImageUrl,
-    isVisible: this.model.isVisible,
+  //  isVisible: this.model.isVisible,
     publishedDate: this.model.publishedDate,
     title: this.model.title,
     urlHandle: this.model.urlHandle,
-    categories: this.selectedCategory ?? []
+  //  categories: this.selectedCategory ?? []
   };
 
   this.updateBlogPostSubscription = this.blogPostService.updateBlogPost(this.id, updateBlogPost)

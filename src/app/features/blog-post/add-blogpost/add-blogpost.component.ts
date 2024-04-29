@@ -21,23 +21,23 @@ imageSelectorSubscription?: Subscription;
 constructor (
    private blogPostService:BlogPostService,
    private router:Router,
-   private categoryService:CategoryService,
+  
    private imageService:ImageService) {
   this.model = {
     title: '',
     shortDescription: '',
     urlHandle: '',
-    content: '',
+  
     featuredImageUrl: '',
-    author: '',
-    isVisible: true,
+  
+  
     publishedDate: new Date(),
-    categories: []
+    
   }
 }
 
-ngOnInit(): void {
-  this.categories$ = this.categoryService.getAllCategories();
+ngOnInit(): void { 
+
 
   this.imageSelectorSubscription = this.imageService.onSelectImage()
   .subscribe({
