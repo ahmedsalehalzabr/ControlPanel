@@ -13,7 +13,8 @@
               <th>Title</th>
               <th>Short Description</th>
             
-              <th>Categories</th>
+              
+              <th>Price</th>
               <th> </th>
             </tr>
           </thead>
@@ -21,8 +22,8 @@
             <tr *ngFor="let blogPost of blogPosts">
               <td>{{blogPost.title}}</td>
               <td>{{blogPost.shortDescription}}</td>
-             
-              <td>
+             <td>{{blogPost.price}}</td>
+              
               
               <td>
                 <a class="btn btn-success" [routerLink]="['/admin/blogposts', blogPost.id]">Edit</a>

@@ -4,5 +4,6 @@ export interface UpdateBlogPostModel {
     featuredImageUrl: string;
     urlHandle: string;
     publishedDate: Date;
+    price:number;
    // categories: string[];
 }

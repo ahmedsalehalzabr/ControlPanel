@@ -29,7 +29,7 @@ constructor (
     urlHandle: '',
   
     featuredImageUrl: '',
-  
+    price:0,
   
     publishedDate: new Date(),
     

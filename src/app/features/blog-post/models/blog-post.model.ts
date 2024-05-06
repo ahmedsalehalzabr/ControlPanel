@@ -7,5 +7,6 @@ export interface BlogPost {
     featuredImageUrl: string;
     urlHandle: string;
     publishedDate: Date;
+    price:number;
    // categories: Category[];
   }

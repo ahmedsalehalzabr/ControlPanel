@@ -76,6 +76,7 @@ onFormSubmit(): void {
     publishedDate: this.model.publishedDate,
     title: this.model.title,
     urlHandle: this.model.urlHandle,
+    price:this.model.price,
   //  categories: this.selectedCategory ?? []
   };
 
