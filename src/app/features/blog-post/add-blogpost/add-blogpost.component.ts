@@ -30,6 +30,8 @@ constructor (
   
     featuredImageUrl: '',
     price:0,
+    discount:0,
+  priceDiscount:0,
   
     publishedDate: new Date(),
     

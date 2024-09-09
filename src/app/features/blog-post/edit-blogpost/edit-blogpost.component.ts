@@ -77,6 +77,8 @@ onFormSubmit(): void {
     title: this.model.title,
     urlHandle: this.model.urlHandle,
     price:this.model.price,
+    discount:this.model.discount,
+    priceDiscount:this.model.priceDiscount,
   //  categories: this.selectedCategory ?? []
   };
 

@@ -5,5 +5,7 @@ export interface UpdateBlogPostModel {
     urlHandle: string;
     publishedDate: Date;
     price:number;
+    discount:number;
+    priceDiscount:number;
    // categories: string[];
 }

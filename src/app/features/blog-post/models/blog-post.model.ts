@@ -8,5 +8,7 @@ export interface BlogPost {
     urlHandle: string;
     publishedDate: Date;
     price:number;
+    discount:number;
+  priceDiscount:number;
    // categories: Category[];
   }
